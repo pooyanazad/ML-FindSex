@@ -1,6 +1,8 @@
 import csv
 from sklearn import tree
-
+height=input("Enter your Height in cm: ")
+weight=input("Enter your Weight in kg: ")
+#age=input("Enter your Age: ")
 x = []
 y = []
 
@@ -15,7 +17,10 @@ with open('Book1.csv','r') as csvfile:
 clf = tree.DecisionTreeClassifier()
 clf = clf.fit(x, y)
 
-new_data = [[180,24,90],[170,24,65]]
+#This 24 is age,you can use it(usless here)
+
+new_data = [[height,24,weight]]
+#you can use 2 or 3 input with change this new_data = [[height,24,weight],[height1,24,weight1]]
 answer = clf.predict(new_data)
 print(answer[0])
-print(answer[1])
+#print second entry answer print(answer[1])
